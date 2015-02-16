@@ -44,17 +44,30 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['**/*.hbs'],
-                tasks: ['assemble','less','concat','jshint'],
+                files: ['./src/**/*.hbs','./src/**/*.js','./src/**/*.css','./src/**/*.less','./src/**.*.html'],
+                tasks: ['default','connect'],
                 options: {
-                    spawn: false,
+	                spawn: true,
+                    livereload: true,
                 },
             },
         },
+		connect: {
+			server: {
+				options: {
+					useAvailablePort: true,
+		            open: false,
+		            base: '.',
+					hostname: 'localhost',
+					livereload: true
+				}
+			}
+		}
     });
 
     // Load handlebars template compiler
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -62,5 +75,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['assemble','less','concat','jshint']);
+    grunt.registerTask('serve', ['assemble','less','concat','jshint','connect','watch']);
 
 };
