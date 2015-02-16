@@ -1,0 +1,30 @@
+{
+  "name": "toolkit",
+  "version": "0.0.1",
+  "homepage": "https://github.com/johnthedesigner/toolkit",
+  "authors": [
+    "johnthedesigner <john@johnthedesigner.com>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "main": [
+    ".build/scripts/toolkit.css",
+    ".build/styles/toolkit.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "4620098aa643f23bd580d8ec41a7d1666da46ec8"
+  },
+  "_source": "git://github.com/johnthedesigner/toolkit.git",
+  "_target": "*",
+  "_originalSource": "jtd-toolkit"
+}
